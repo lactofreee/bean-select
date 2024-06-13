@@ -1,0 +1,64 @@
+{
+  "beans": [
+    {
+      "id": 1,
+      "enName": "Brazil Sitiio Araucaria Yellow Catucai Pupled Natural",
+      "krName": "원두 브라질 시티오 아라우카리아 옐로우 카투아이",
+      "info": {
+        "roastery":"MOMOS COFFEE",
+        "region": "Serra da Mantiqueira",
+        "altitude": 1100,
+        "producer": "Kleber de Castro Junqueira",
+        "variety": "Yellow Catucai",
+        "process": "Natural",
+        "score": 4.5
+      },
+      "productImage": "/img/브라질 시티오.jpg"
+    },
+    {
+      "id": 2,
+      "enName": "Ecuador Alaska Del Sur Typica Mejorado Washed",
+      "krName": "원두 에콰도르 알래스카 델 수르 티피카 메호라도",
+      "info": {
+        "roastery":"MOMOS COFFEE",
+        "region": "Andes Mountains, Loja",
+        "altitude": 2000,
+        "producer": "Curt Madison",
+        "variety": "Typica Mejorado",
+        "process": "Washed",
+        "score": 5
+      },
+      "productImage": "/img/에콰도르 알래스카.jpeg"
+    },
+    {
+      "id": 3,
+      "enName": "Ecuador Chcovilcamundo El Dorado Wush Wush",
+      "krName": "원두 에콰도르 CVM 엘 도라도 우쉬우쉬",
+      "info": {
+        "roastery":"MOMOS COFFEE",
+        "region": "Loja, Ecuador",
+        "altitude": 1950,
+        "producer": "Bernard Uhe",
+        "variety": "Wush Wush",
+        "process": "Washed",
+        "score": 3.6
+      },
+      "productImage": "/img/에콰도르 CVM.jpeg"
+    },
+    {
+      "id": 4,
+      "enName": "Ecuador Alaska Del Sur Geisha Washed",
+      "krName": "원두 에콰도르 알래스카 델 수르 게이샤",
+      "info": {
+        "roastery":"MOMOS COFFEE",
+        "region": "Andes Mountains, Loja",
+        "altitude": 2000,
+        "producer": "Curt Madison",
+        "variety": "Geisha",
+        "process": "Washed",
+        "score": 4.2
+      },
+      "productImage": "/img/에콰도르 알래스카 게이샤.jpg"
+    }
+  ]
+}
