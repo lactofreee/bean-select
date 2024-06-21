@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Root from "./Root";
 import Beans from "./screens/Beans";
 import Bean from "./screens/Bean";
+import PostData from "./Hooks/PostData";
 
 const router = createBrowserRouter([
   {
@@ -14,7 +15,13 @@ const router = createBrowserRouter([
       },
       {
         path: ":beanId",
-        element: <Bean />
+        element: <Bean />,
+        children: [
+          {
+            path: "comment",
+            element: <PostData />
+          }
+        ]
       }
     ],
   },

@@ -4,9 +4,10 @@ import { Link } from "react-router-dom";
 
 const Header = styled.div`
   display: flex;
-  background-color: #d7d7d0;
+  background-color: #f4f4f4;
   height: 50px;
   width: 100%;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1), 0 5px 5px rgba(0, 0, 0, 0.22);
 `;
 
 const TitleContainner = styled.div`
@@ -25,22 +26,7 @@ const Title = styled.h1`
 const Wrapper = styled.div`
   width: 100%;
   height: 100%;
-`;
-
-const Main = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 0.5fr;
-  max-width: 1200px;
-  min-height: 700px;
-  margin: 0 auto;
-  padding: 15px;
-  background-color: #ffffff;
-`;
-
-const Section = styled.div``;
-
-const Filter = styled.div`
-  background-color: white;
+  margin-top: 20px;
 `;
 
 function Root() {
@@ -54,12 +40,7 @@ function Root() {
         </TitleContainner>
       </Header>
       <Wrapper>
-        <Main>
-          <Section>
-            <Outlet />
-          </Section>
-          <Filter></Filter>
-        </Main>
+        <Outlet />
       </Wrapper>
     </>
   );
