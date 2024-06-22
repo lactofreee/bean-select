@@ -16,8 +16,8 @@ export async function fetchProductData() {
   return fetch(`${BASE_URL}/productData`).then((res) => res.json());
 }
 
-export async function fetchUserInfo() {
-  return fetch(`${BASE_URL}/userInfo`).then((res) => res.json());
+export async function fetchUserComment() {
+  return fetch(`${BASE_URL}/userComment`).then((res) => res.json());
 }
 
 // comment창에서 데이터를 입력하면 onSubmitHandler를 통해 서버에 POST 요청을 보냄

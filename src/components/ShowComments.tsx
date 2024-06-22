@@ -1,11 +1,11 @@
 import { useQuery } from "react-query";
-import { fetchUserInfo } from "../routes/api";
+import { fetchUserComment } from "../routes/api";
 import { IUsersResponse } from "../RecoilAtom/Atom";
 import styled from "styled-components";
-import StarRating from "./StarRating";
+import StarRating from "./ShowStarRating";
+import { FaUserAlt } from "react-icons/fa";
 
-const Container = styled.div`
-`;
+const Container = styled.div``;
 
 const CommentBody = styled.div`
   display: flex;
@@ -19,8 +19,9 @@ const UserProfile = styled.div`
   padding-bottom: 20px;
 `;
 
-const UserImg = styled.img`
-  height: 50px;
+const UserImg = styled.div`
+  background-color: #D7D7D0;
+  padding: 8px 10px;
   border-radius: 50px;
 `;
 
@@ -30,12 +31,11 @@ const UserInfo = styled.div`
 
 const UserName = styled.h3``;
 
-
 const Comment = styled.h3``;
 
 function ShowComments() {
   const { isLoading: isUserInfoLoading, data: usersData } =
-    useQuery<IUsersResponse>("userInfo", fetchUserInfo);
+    useQuery<IUsersResponse>("userComment", fetchUserComment);
 
   return (
     <Container>
@@ -43,16 +43,18 @@ function ShowComments() {
         <h1>Loading...</h1>
       ) : (
         usersData?.users.map((user) => (
-          <CommentBody key={user.index}>
+          <CommentBody key={user.uid}>
             <UserProfile>
-              <UserImg src={user.userImg} alt={user.id} />
+              <UserImg>
+                <FaUserAlt />
+              </UserImg>
               <UserInfo>
-                <UserName>{user.userId}</UserName>
-                <StarRating score={user.score}></StarRating>
+                <UserName>{user.comments.id}</UserName>
+                <StarRating score={user.comments.score}></StarRating>
               </UserInfo>
             </UserProfile>
-            <Comment>{user.coment}</Comment>
-            <hr/>
+            <Comment>{user.comments.userComment}</Comment>
+            <hr />
           </CommentBody>
         ))
       )}

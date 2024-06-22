@@ -1,21 +1,36 @@
 import { ChangeEvent, FormEvent, useState } from "react";
 import { BASE_URL } from "../routes/api";
 import { v4 as uuidv4 } from "uuid";
+import StarRating from "../components/StarRating";
+import StarRatingComponent from "../components/StarRatingComponent";
+import styled from "styled-components";
+
+const MyForm = styled.form`
+  display: flex;
+  padding-bottom: 40px;
+`;
+
+const InPutDiv = styled.div`
+  display: flex;
+  gap: 10px;
+`;
 
 interface FormData {
   id: string;
-  userName: string;
   userComment: string;
+  score: number;
 }
 
 function PostData() {
   const [formData, setFormData] = useState<FormData>({
     id: "",
-    userName: "",
     userComment: "",
+    score: 0,
   });
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setFormData((prevFormData) => ({
       ...prevFormData,
@@ -50,8 +65,8 @@ function PostData() {
 
       setFormData({
         id: "",
-        userName: "",
         userComment: "",
+        score: 0,
       });
     } catch (error) {
       console.error("Errpr:", error);
@@ -59,41 +74,32 @@ function PostData() {
   };
 
   return (
-    <form onSubmit={onSubmitHandler}>
-      <div>
-        <label>
-          ID:
-          <input
-            type="text"
-            name="id"
-            value={formData.id}
-            onChange={handleChange}
-          />
-        </label>
-      </div>
-      <div>
-        <label>
-          User Name:
-          <input
-            type="text"
-            name="userName"
-            value={formData.userName}
-            onChange={handleChange}
-          />
-        </label>
-      </div>
-      <div>
-        <label>
-          User Comment:
-          <textarea
-            name="userComment"
-            value={formData.userComment}
-            onChange={handleChange}
-          />
-        </label>
-      </div>
+    <MyForm onSubmit={onSubmitHandler}>
+      <InPutDiv>
+        <label>ID:</label>
+        <input
+          type="text"
+          name="id"
+          value={formData.id}
+          onChange={handleChange}
+        />
+        <label>User Comment:</label>
+        <textarea
+          name="userComment"
+          value={formData.userComment}
+          onChange={handleChange}
+        />
+        <label>Score:</label>
+        <input
+          type="number"
+          name="score"
+          value={formData.score}
+          onChange={handleChange}
+        />
+      </InPutDiv>
+      <StarRatingComponent />
       <button type="submit">Submit</button>
-    </form>
+    </MyForm>
   );
 }
 

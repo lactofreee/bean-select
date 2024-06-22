@@ -18,8 +18,6 @@ const Line = styled.hr`
 `;
 
 const Main = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 0.5fr;
   max-width: 1200px;
   min-height: 700px;
   margin: 0 auto;

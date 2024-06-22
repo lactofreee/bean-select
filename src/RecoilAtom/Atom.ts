@@ -73,12 +73,12 @@ export interface IBeanDetail {
 }
 
 export interface User {
-  id: string;
-  index: string;
-  userId: string;
-  userImg: string;
-  coment: string;
-  score: number;
+  uid: string;
+  comments: {
+    id: string;
+    userComment: string;
+    score: number;
+  };
 }
 
 export interface IUsersResponse {

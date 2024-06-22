@@ -11,7 +11,7 @@ import {
   useLocation,
   Outlet,
 } from "react-router-dom";
-import StarRating from "../components/StarRating";
+import StarRating from "../components/ShowStarRating";
 import Note from "../components/Note";
 import ShowProductImg from "../components/ShowProductImg";
 import ShowProductInfo from "../components/ShowProductInfo";
